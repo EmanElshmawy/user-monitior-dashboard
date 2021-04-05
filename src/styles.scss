@@ -1,0 +1,49 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+@import './variables';
+@import './fonts';
+@import "./theme.scss";
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a{
+  display: inline-block;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
+h3{
+  @include subTitles();
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+
+.dark-theme-mode {
+  .filter, .mini-cards .card{
+    background:#303030 !important;
+    border: 0 !important;
+  }
+
+}
+
+.table-responsive{
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}

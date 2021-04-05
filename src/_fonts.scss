@@ -1,0 +1,43 @@
+
+@mixin label {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+@mixin sidebarLinks {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.56;
+  letter-spacing: 0.32px;
+}
+
+@mixin h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 0.58;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+@mixin card-h3 {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.53;
+  letter-spacing: normal;
+}
+
+@mixin card-number {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+
+@mixin subTitles{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 0.58;
+  letter-spacing: normal;
+  text-align: left;
+}

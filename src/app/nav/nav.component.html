@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container mat-app-background" [ngClass]="{'dark-theme-mode': isDarkTheme}">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <mat-toolbar class="sidenav__header-wrapper">
+       <span class="logo">Screen </span>Time
+        <button class="close-icon" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <i class="fas fa-times"></i>
+        </button>
+      </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['']" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a mat-list-item href="#"><i class="fas fa-desktop"></i> My Devices</a>
+      <a mat-list-item href="#"><i class="fas fa-folder-minus"></i>Subscribtions</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar >
+      <div class="container-fluid">
+        <div class="btn-wrapper">
+          <button aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <mat-slide-toggle [(ngModel)]='isDarkTheme' (change)="storeThemeSelection()">Dark Mode</mat-slide-toggle>
+        </div>
+    </div>
+    </mat-toolbar>
+<div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      <!-- footer -->
+      <footer class="text-center">
+        <p>© Copyright 2021. All Rights Reserved.</p>
+      </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

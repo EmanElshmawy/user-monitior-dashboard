@@ -1,0 +1,8 @@
+@import '../../variables';
+@import '../../fonts';
+.dashboard{
+  h2 {
+    @include h2();
+    margin-bottom: 1.2em;
+}
+}

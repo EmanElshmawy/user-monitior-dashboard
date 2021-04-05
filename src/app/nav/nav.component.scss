@@ -1,0 +1,136 @@
+@import '../../variables';
+@import '../../fonts';
+
+.sidenav-container {
+  height: 100%;
+
+  button[aria-label="Toggle sidenav"] {
+    background: transparent;
+    border: 0;
+    color: $black-10;
+  }
+
+  .sidenav {
+    background: $primary;
+    width: 200px;
+
+    &__header-wrapper {
+      display: flex;
+      font-weight: 600;
+      text-align: center;
+      justify-content: center;
+      background: $primary !important;
+      height: 56px;
+      &.mat-toolbar {
+        box-shadow: none !important;
+      }
+
+      @media(max-width:$lg) {
+        button {
+          margin-left: auto;
+        }
+      }
+
+      .logo {
+        color: #fff;
+      }
+
+      .close-icon {
+        display: none;
+
+        @media(max-width:$lg) {
+          display: inline-block;
+
+        }
+      }
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .mat-nav-list {
+    a {
+      @include sidebarLinks();
+      color: #fff;
+     svg{
+        margin-right: 15px;
+      }
+      &.active{
+        background: rgba(255,255,255,0.2);
+      }
+    }
+  }
+
+  .content {
+    background: $lightBg;
+    min-height: calc(100vh - 110px);
+    padding: 4rem 1rem;
+    // background-image: url(../../assets/images/Double-recs-rotate.png);
+    // background-repeat: no-repeat;
+    // background-size: 40%;
+    // background-position: top right;
+  }
+
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    background: #fff;
+box-shadow: 0 13px 10px $shadow;
+  }
+
+  .mat-slide-toggle {
+    @include sidebarLinks();
+  }
+
+}
+
+.dark-theme-mode {
+
+
+  button[aria-label="Toggle sidenav"] {
+    color: $white;
+  }
+
+  .logo {
+    color: $primary !important;
+  }
+
+  .sidenav,
+  .mat-toolbar-row,
+  .mat-toolbar-single-row,
+  .content,
+  .sidenav__header-wrapper {
+    background: $black-10 !important;
+  }
+
+  .content {
+    background: $DarkBg !important;
+  }
+
+  .mat-slide-toggle.mat-checked {
+    .mat-slide-toggle-thumb {
+      background-color: $primary !important;
+    }
+  }
+}
+
+
+// footer
+footer {
+  padding: 1rem;
+
+  p {
+    margin: 0;
+    @include label();
+  }
+}

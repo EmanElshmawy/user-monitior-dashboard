@@ -1,0 +1,35 @@
+@import '../../variables';
+@import '../../fonts';
+.filter{
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #fff;
+    border-radius: 15px;
+    .form{
+  width: 50%;
+  margin: 0 auto;
+  align-items: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media(max-width:1300px){
+width: 80%;
+  }
+  @media(max-width: 470px){
+    flex-direction: column;
+  }
+  @media(max-width: $md){
+    .btn-primary{
+      margin:  auto;
+    }
+  }
+  .mat-form-field{
+    margin-right: 20px;
+  }
+}
+.mat-datepicker-toggle{
+  color: $primary !important;
+}
+}
+
+
