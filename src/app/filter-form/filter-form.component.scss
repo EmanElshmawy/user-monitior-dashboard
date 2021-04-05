@@ -6,15 +6,14 @@
     background: #fff;
     border-radius: 15px;
     .form{
-  width: 50%;
+
   margin: 0 auto;
   align-items: center;
   margin: 0 auto;
   flex-wrap: wrap;
   justify-content: space-between;
-  @media(max-width:1300px){
-width: 80%;
-  }
+  display: flex;
+
   @media(max-width: 470px){
     flex-direction: column;
   }
@@ -23,8 +22,26 @@ width: 80%;
       margin:  auto;
     }
   }
+  .row{
+    width: 100%;
+  }
+  .date-block__list {
+    width: 40%;
+    @media(max-width: $md){
+      width: 100%;
+    }
+}
   .mat-form-field{
     margin-right: 20px;
+    width: 100%;
+  }
+  .btn-primary{
+    padding: 10px 25px;
+
+    @media(max-width: $md){
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 }
 .mat-datepicker-toggle{
