@@ -41,9 +41,10 @@ h3{
 
 .table-responsive{
   border-radius: 12px;
-  overflow: hidden;
+  // overflow: hidden;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+  border: 1px solid #ddd;
 }

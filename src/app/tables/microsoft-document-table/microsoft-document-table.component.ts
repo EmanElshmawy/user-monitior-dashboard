@@ -6,80 +6,80 @@ import { FilterService } from '../../services/filter.service';
 export interface PeriodicElement {
   name: string;
   position: number;
-  weight: number;
+  time: number;
   DOB: Date;
-  created: Date;
+  Date: Date;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 1,
     name: 'Hydrogen',
-    weight: 1.0079,
+    time: 1.0079,
     DOB: new Date(2020, 11, 24),
-    created: new Date(2020, 15, 24),
+    Date: new Date(2020, 15, 24),
   },
   {
     position: 2,
     name: 'Helium',
-    weight: 4.0026,
+    time: 4.0026,
     DOB: new Date(2021, 18, 24),
-    created: new Date(2021, 11, 24),
+    Date: new Date(2021, 11, 24),
   },
   {
     position: 3,
     name: 'Lithium',
-    weight: 6.941,
+    time: 6.941,
     DOB: new Date(2020, 6, 12),
-    created: new Date(2020, 12, 15),
+    Date: new Date(2020, 12, 15),
   },
   {
     position: 4,
     name: 'Beryllium',
-    weight: 9.0122,
+    time: 9.0122,
     DOB: new Date(2021, 7, 6),
-    created: new Date(2021, 10, 6),
+    Date: new Date(2021, 10, 6),
   },
   {
     position: 5,
     name: 'Boron',
-    weight: 10.811,
+    time: 10.811,
     DOB: new Date(2020, 5, 9),
-    created: new Date(2020, 5, 9),
+    Date: new Date(2020, 5, 9),
   },
   {
     position: 6,
     name: 'Carbon',
-    weight: 12.0107,
+    time: 12.0107,
     DOB: new Date(2021, 7, 14),
-    created: new Date(2021, 7, 14),
+    Date: new Date(2021, 7, 14),
   },
   {
     position: 7,
     name: 'Nitrogen',
-    weight: 14.0067,
+    time: 14.0067,
     DOB: new Date(1998, 11, 18),
-    created: new Date(2019, 11, 18),
+    Date: new Date(2019, 11, 18),
   },
   {
     position: 8,
     name: 'Oxygen',
-    weight: 15.9994,
+    time: 15.9994,
     DOB: new Date(2021, 2, 24),
-    created: new Date(2021, 2, 24),
+    Date: new Date(2021, 2, 24),
   },
   {
     position: 9,
     name: 'Fluorine',
-    weight: 18.9984,
+    time: 18.9984,
     DOB: new Date(2019, 4, 29),
-    created: new Date(2019, 4, 29),
+    Date: new Date(2019, 4, 29),
   },
   {
     position: 10,
     name: 'Neon',
-    weight: 20.1797,
+    time: 20.1797,
     DOB: new Date(2021, 5, 30),
-    created: new Date(2021, 5, 30),
+    Date: new Date(2021, 5, 30),
   },
 ];
 @Component({
@@ -89,7 +89,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class MicrosoftDocumentTableComponent implements OnInit {
   data;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'DOB', 'founded'];
+  displayedColumns: string[] = ['position', 'name', 'time', 'DOB', 'Date'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   pipe: DatePipe;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -108,7 +108,7 @@ export class MicrosoftDocumentTableComponent implements OnInit {
     this.pipe = new DatePipe('en');
     this.dataSource.filterPredicate = (data, filter) => {
       if (this.fromDate && this.toDate) {
-        return data.created >= this.fromDate && data.created <= this.toDate;
+        return data.Date >= this.fromDate && data.Date <= this.toDate;
       }
       return true;
     };
